@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Item Animation Layout - Demo 1</title>
+		<meta name="description" content="A responsive, magazine-like website layout with a grid item animation effect when opening the content" />
+		<meta name="keywords" content="grid, layout, effect, animated, responsive, magazine, template, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="/static/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/static/style1.css" />
+                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+		<script src="/static/js/modernizr.custom.js"></script>
+
+
+	</head>
+	<body>
+		<div class="container">
+			<button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+			<div id="theSidebar" class="sidebar">
+				<button class="close-button fa fa-fw fa-close"></button>
+				<div class="codrops-links">
+
+				</div>
+				<h1><span>BolatRaha</span></h1>
+                <br>
+                <br>
+
+				<div class="related">
+					<a href="/" class="green-text">Read</a>
+					<a href="/record" class="green-text">Write</a>
+				</div>
+			</div>
+			<div id="theGrid" class="main">
+				<section class="grid">
+					<header class="top-bar">
+
+					</header>
+					<a class="grid__item" href="#">
+						<h2 class="title title--preview">Write a post</h2>
+						<div class="loader"></div>
+						<span class="category">publishing</span>
+						<div class="meta meta--preview">
+						</div>
+					</a>
+
+				</section>
+				<section class="content">
+					<div class="scroll-wrap">
+						<article class="content__item">
+							<h6 class="title">Write your post here</h6>
+
+
+
+                            <form action="/record" method="post">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+
+                                <div class="input-field">
+                                    <input placeholder="Enter your name" id="author" type="text"
+                                           class="validate center" name="author">
+                                </div>
+
+                                 <div class="input-field">
+                                    <input placeholder="Post title" id="title" type="text"
+                                           class="validate center" name="title">
+                                </div>
+
+                                 <div class="input-field">
+                                    <input placeholder="Category" id="cat" type="text"
+                                           class="validate center" name="cat">
+                                </div>
+
+                                <div class="input-field">
+                                    <textarea id="textarea1" class="materialize-textarea center"
+                                              placeholder="Enter thoughts here" name="thoughts"></textarea>
+                                </div>
+
+
+                                <br>
+
+                                <div class="row center">
+                                    <button class="btn-flat waves-effect blue darken-1 waves-light white-text"
+                                            type="submit"
+                                            >Send
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+
+
+                            </form>
+                        </article>
+					</div>
+					<button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+				</section>
+			</div>
+		</div><!-- /container -->
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/main.js"></script>
+	</body>
+</html>

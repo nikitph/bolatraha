@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid Item Animation Layout - Demo 1</title>
+    <meta name="description"
+          content="A responsive, magazine-like website layout with a grid item animation effect when opening the content"/>
+    <meta name="keywords" content="grid, layout, effect, animated, responsive, magazine, template, web design"/>
+    <meta name="author" content="Codrops"/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/style1.css"/>
+
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="/static/js/modernizr.custom.js"></script>
+
+
+    <script type="text/javascript" charset="utf-8">
+        {#$(document).ready(function () {
+
+            var msg = {{ thoughts|safe }};
+            for (var i = 0; i < msg.length; i++) {
+                var b = msg[i];
+                var t = new Date(b.time);
+
+                $('#art').append('<article class="content__item"><span class="category category--full">' + b.cat + '</span>' + '<h2 class="title title--full">' +
+                b.title + '</h2>' +
+                '<div class="meta meta--full">' +
+                '<span class="meta__author">' + b.author + '</span><span class="meta__date"><i class="fa fa-calendar-o"></i>' + t + '</span></div>' + '<p>' + b.thoughts + '</p></article>');
+
+
+                $('#hlines').append('<a class="grid__item" href="#"><h2 class="title title--preview">' + b.title + '</h2>' + '<div class="loader"></div>' +
+                '<span class="category">' + b.cat + '</span>' +
+                '<div class="meta meta--preview">' +
+                '<span class="meta__date"><i class="fa fa-calendar-o"></i>' + t + '</span></div></a>');
+
+
+            }
+
+        });#}
+
+
+    </script>
+
+
+</head>
+<body>
+<div class="container">
+    <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+    <div id="theSidebar" class="sidebar">
+        <button class="close-button fa fa-fw fa-close"></button>
+        <div class="codrops-links">
+        </div>
+        <h1><span>BolatRaha</span></h1>
+                <br>
+                <br>
+
+				<div class="related">
+					<a href="/" class="green-text">Read</a>
+					<a href="/record" class="green-text">Write</a>
+				</div>
+    </div>
+    <div id="theGrid" class="main">
+        <section id="hlines" class="grid">
+            {% for thought in thoughts %}
+                <a class="grid__item" href="#">
+						<h2 class="title title--preview">{{ thought.title|e }}</h2>
+						<div class="loader"></div>
+						<span class="category">{{ thought.cat|e }}</span>
+						<div class="meta meta--preview">
+							<span class="meta__date"><i class="fa fa-calendar-o"></i>{{ thought.time|e }}</span>
+						</div>
+					</a>
+            {% endfor %}
+
+        </section>
+        <section class="content" id="art2">
+            <div class="scroll-wrap" id="art">
+                            {% for thought in thoughts %}
+
+                <article class="content__item">
+							<span class="category category--full">{{ thought.cat|e }}</span>
+							<h2 class="title title--full">{{ thought.title|e }}</h2>
+							<div class="meta meta--full">
+								<span class="meta__author">{{ thought.name|e }}</span>
+								<span class="meta__date"><i class="fa fa-calendar-o"></i>{{ thought.time|e }}</span>
+							</div>
+                                <p>{{ thought.thoughts|e }}</p>
+                                </article>
+							 {% endfor %}
+
+
+            </div>
+            <button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+        </section>
+    </div>
+</div>
+<!-- /container -->
+<script src="/static/js/classie.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
